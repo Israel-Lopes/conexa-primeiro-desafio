@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,23 +27,19 @@ public class MovieLukeSkyWalkerService {
 
     public List<Film> getMoviesSkyWalker() {
         PeopleCatalog peoples = peopleIntegration.getPeople();
-        List<String> moviesSky = new ArrayList<>();
 
-        for (People people : peoples.getResults()) {
-            if (people.getName().equals(NAME)) {
-                log.info("Parametros de busca para people: {}", NAME);
-                for (String filmUrl : people.getFilms()) {
-                    moviesSky.add(filmUrl.substring(28, 29));
-                    log.info("Parametros de busca para films: {}", filmUrl.substring(28, 29));
-                }
-                break;
-            }
-        }
+        List<String> moviesSky = peoples.getResults()
+                .stream()
+                .filter(people -> people.getName().equals(NAME))
+                .flatMap(people -> people.getFilms().stream())
+                .map(filmUrl -> filmUrl.substring(28, 29))
+                .collect(Collectors.toList());
+
+        log.info("Parametros de busca para films: {}", moviesSky);
 
         if (moviesSky.isEmpty()) {
             log.info("Nao foram encontrados filmes do personagem ", NAME);
-
-            return null;
+            return Collections.emptyList();
         }
 
         return moviesSky.stream()
