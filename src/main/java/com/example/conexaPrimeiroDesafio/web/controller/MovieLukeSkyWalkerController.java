@@ -1,6 +1,6 @@
-package com.example.conexaPrimeiroDesafio.controller;
+package com.example.conexaPrimeiroDesafio.web.controller;
 
-import com.example.conexaPrimeiroDesafio.model.Film;
+import com.example.conexaPrimeiroDesafio.service.model.Film;
 import com.example.conexaPrimeiroDesafio.service.MovieLukeSkyWalkerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

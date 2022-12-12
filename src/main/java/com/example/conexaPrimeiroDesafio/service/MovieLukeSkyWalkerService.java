@@ -2,15 +2,13 @@ package com.example.conexaPrimeiroDesafio.service;
 
 import com.example.conexaPrimeiroDesafio.integration.FilmCatalogIntegration;
 import com.example.conexaPrimeiroDesafio.integration.PeopleCatalogIntegration;
-import com.example.conexaPrimeiroDesafio.model.Film;
-import com.example.conexaPrimeiroDesafio.model.People;
-import com.example.conexaPrimeiroDesafio.model.catalog.PeopleCatalog;
+import com.example.conexaPrimeiroDesafio.service.model.Film;
+import com.example.conexaPrimeiroDesafio.service.model.catalog.PeopleCatalog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;

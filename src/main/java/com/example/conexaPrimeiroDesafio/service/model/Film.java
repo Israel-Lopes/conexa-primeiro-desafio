@@ -1,4 +1,4 @@
-package com.example.conexaPrimeiroDesafio.model;
+package com.example.conexaPrimeiroDesafio.service.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

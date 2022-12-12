@@ -1,5 +1,6 @@
-package com.example.conexaPrimeiroDesafio.model;
+package com.example.conexaPrimeiroDesafio.service.model.catalog;
 
+import com.example.conexaPrimeiroDesafio.service.model.People;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +14,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class People {
-    private String name;
-    private List<String> films;
-
+public class PeopleCatalog {
+    private List<People> results;
 }
